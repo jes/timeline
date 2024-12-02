@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .timeline {
+            position: relative;
+            margin: 50px;
+            padding-left: 100px;
+            border-left: 2px solid #ccc;
+        }
+        .event {
+            position: absolute;
+            left: 0;
+            transform: translateX(-50%);
+            margin-left: 100px;
+        }
+        .event-dot {
+            width: 16px;
+            height: 16px;
+            background: #666;
+            border-radius: 50%;
+        }
+        .event-range {
+            width: 16px;
+            background: #666;
+            border-radius: 8px;
+        }
+        .event-text {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+    {{range .Events}}
+        <div class="event" style="top: {{subtract .StartYear $.EarliestYear}}px">
+            {{if eq .StartYear .EndYear}}
+            <div class="event-dot"></div>
+            {{else}}
+            <div class="event-range" style="height: {{subtract .EndYear .StartYear}}px"></div>
+            {{end}}
+            <div class="event-text">
+                {{if .IsBC}}{{abs .StartYear}} BC{{else if .HasAD}}{{.StartYear}} AD{{else}}{{.StartYear}}{{end}}: {{.Text}}
+            </div>
+        </div>
+    {{end}}
+    </div>
+</body>
+</html> 
