@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .timeline {
+            position: relative;
+            margin: 50px;
+            min-height: 100vh;
+        }
+        
+        .event {
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .event-dot {
+            width: 8px;
+            height: 8px;
+            background: #666;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .event-text {
+            display: inline-block;
+            font-size: 14px;
+            transform: translateY(-2px);
+        }
+        
+        .grid-line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: #ddd;
+            top: 0;
+            bottom: 0;
+        }
+        
+        .grid-line-label {
+            position: absolute;
+            top: -20px;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .event-text a {
+            color: darkblue;
+            text-decoration: none;
+        }
+        .event-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <title>Timeline of Discovery</title>
+</head>
+<body>
+    <h1>Timeline of Discovery</h1>
+    <div class="timeline">
+        
+        
+        
+            <div class="grid-line" style="left: calc(((-1600 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">-1600</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((-1400 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">-1400</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((-1200 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">-1200</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((-1000 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">-1000</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((-800 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">-800</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((-600 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">-600</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((-400 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">-400</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((-200 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">-200</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((0 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">0</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((200 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">200</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((400 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">400</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((600 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">600</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((800 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">800</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((1000 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">1000</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((1200 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">1200</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((1400 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">1400</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((1600 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">1600</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((1800 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">1800</div>
+            </div>
+        
+            <div class="grid-line" style="left: calc(((2000 - -1750) / 3769) * 80%);">
+                <div class="grid-line-label">2000</div>
+            </div>
+        
+        
+        
+            <div class="event" style="
+                left: calc(((-1750 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1750 BC: <a href="https://en.wikipedia.org/wiki/Code_of_Hammurabi">Hammurabi's Code</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((-507 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    507 BC: <a href="https://en.wikipedia.org/wiki/Cleisthenes">Cleisthenes establishes democracy in Athens</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((-260 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    260 BC: <a href="https://en.wikipedia.org/wiki/Archimedes%27_principle">Archimedes' principle</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((-150 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    150 BC: <a href="https://en.wikipedia.org/wiki/Antikythera_mechanism">Antikythera Mechanism</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((50 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    50 AD: <a href="https://en.wikipedia.org/wiki/Aeolipile">Hero's Aeolipile</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((400 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    400 AD: <a href="https://en.wikipedia.org/wiki/Church_bell">First cast church bells</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((600 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    600 AD: <a href="https://en.wikipedia.org/wiki/Batik">Batik silk painting</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1215 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1215: <a href="https://en.wikipedia.org/wiki/Magna_Carta">Magna Carta</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1386 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1386: <a href="https://en.wikipedia.org/wiki/Salisbury_Cathedral_clock">Salisbury Cathedral clock</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1455 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1455: <a href="https://en.wikipedia.org/wiki/Printing_press">Gutenberg's printing press</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1492 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1492: <a href="https://en.wikipedia.org/wiki/Christopher_Columbus">Christopher Columbus discovers America</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1602 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1602: <a href="https://en.wikipedia.org/wiki/Pendulum#History">Galileo discovers isochrony of pendulums</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1656 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1656: <a href="https://en.wikipedia.org/wiki/Pendulum_clock">Huygens builds first pendulum clock</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1666 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1666: <a href="https://en.wikipedia.org/wiki/Newton%27s_theory_of_colour">Newton splits light with a prism, develops calculus</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1664 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1664: <a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke's law, balance springs</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1675 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1675: <a href="https://en.wikipedia.org/wiki/Balance_spring">Huygens refines balance springs</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1675 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1675: <a href="https://en.wikipedia.org/wiki/History_of_calculus">Leibniz develops calculus</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1687 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1687: <a href="https://en.wikipedia.org/wiki/Principia_Mathematica">Newton's Philosophae Naturalis Principia Mathematica</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1695 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1695: <a href="https://en.wikipedia.org/wiki/Thomas_Tompion">Tompion's cylinder escapement</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1701 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1701: <a href="https://en.wikipedia.org/wiki/Seed_drill">Jethro Tull's seed drill</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1712 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1712: <a href="https://en.wikipedia.org/wiki/Newcomen_atmospheric_engine">Newcomen's engine</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1714 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1714: <a href="https://en.wikipedia.org/wiki/Mercury-in-glass_thermometer">Fahrenheit's mercury thermometer</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1715 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1715: <a href="https://en.wikipedia.org/wiki/Deadbeat_escapement">Graham's deadbeat escapement</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1720 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1720-1772: <a href="https://en.wikipedia.org/wiki/John_Harrison">John Harrison makes clocks</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1733 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1733: <a href="https://en.wikipedia.org/wiki/Flying_shuttle">John Kay's flying shuttle</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1745 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1745: <a href="https://en.wikipedia.org/wiki/Leyden_jar">Leyden jar, first capacitor</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1751 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1751: <a href="https://en.wikipedia.org/wiki/Jacques_de_Vaucanson">Vaucanson's lathe</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1755 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1755: <a href="https://en.wikipedia.org/wiki/Lever_escapement">Mudge's lever escapement</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1770 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1770: <a href="https://en.wikipedia.org/wiki/The_Turk">Mechanical Turk</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1769 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1769: <a href="https://en.wikipedia.org/wiki/Watt_steam_engine">Watt patents improved steam engine</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1784 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1784: <a href="https://en.wikipedia.org/wiki/Watt_steam_engine">Watt's rotary motion steam engine</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1794 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1794: <a href="https://en.wikipedia.org/wiki/Ball_bearing">Philip Vaughan's ball bearings</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1799 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1799: <a href="https://en.wikipedia.org/wiki/History_of_the_metric_system">The metric system officially adopted in France</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1803 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1803: <a href="https://en.wikipedia.org/wiki/Portsmouth_Block_Mills">Brunel's mass production of pulley blocks</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1803 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1803: <a href="https://en.wikipedia.org/wiki/Double-slit_experiment">Young's double-slit experiment</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1804 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1804: <a href="https://en.wikipedia.org/wiki/Jacquard_machine">Jacquard's loom</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1807 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1807: <a href="https://en.wikipedia.org/wiki/Robert_Fulton">Fulton demonstrates first commercially-successful steam boat</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1821 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1821: <a href="https://en.wikipedia.org/wiki/Electromagnetic_rotation">Faraday discovers electromagnetic rotation, motor precursor</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1824 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1824: <a href="https://en.wikipedia.org/wiki/Hans_Christian_%C3%98rsted">Orsted produces first aluminium</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1831 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1831: <a href="https://en.wikipedia.org/wiki/Electromagnetic_induction">Faraday discovers induction</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1837 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1837: <a href="https://en.wikipedia.org/wiki/Analytical_Engine">Babbage describes Analytical Engine</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1841 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1841: <a href="https://en.wikipedia.org/wiki/British_Standard_Whitworth">Whitworth screw thread</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1843 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1843: <a href="https://en.wikipedia.org/wiki/Ada_Lovelace">Ada Lovelace writes first computer program</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1847 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1847: <a href="https://en.wikipedia.org/wiki/Boolean_algebra">Boolean algebra</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1851 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1851: <a href="https://en.wikipedia.org/wiki/Foucault_pendulum">Foucault's pendulum</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1856 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1856: <a href="https://en.wikipedia.org/wiki/Bessemer_process">Bessemer process for refining pig iron into steel</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1860 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1860: <a href="https://en.wikipedia.org/wiki/%C3%89tienne_Lenoir">Lenoir's internal combustion engine</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1865 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1865: <a href="https://en.wikipedia.org/wiki/Maxwell%27s_equations">Maxwell's equations of electromagnetism</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1867 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1867: <a href="https://en.wikipedia.org/wiki/Wheatstone_cipher">Wheatstone's Cryptograh</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1869 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1869: <a href="https://en.wikipedia.org/wiki/Periodic_table">Mendeleev's periodic table</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1875 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1875: <a href="https://en.wikipedia.org/wiki/Metre_Convention">The Metre Convention is signed</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1876 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1876: <a href="https://en.wikipedia.org/wiki/Otto_cycle">Otto cycle</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1883 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1883: <a href="https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway">First train service opens (Stockton and Darlington Railway)</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1886 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1886: <a href="https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process">Hall-Heroult process for smelting aluminium</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1897 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1897: <a href="https://en.wikipedia.org/wiki/Electron">Thomson discovers the electron</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1903 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1903: <a href="https://en.wikipedia.org/wiki/Wright_Flyer">Wright Flyer</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1905 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1905: <a href="https://en.wikipedia.org/wiki/Annus_mirabilis_papers">Einstein's "Annus mirabilis", special relativity</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1908 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1908: <a href="https://en.wikipedia.org/wiki/Ford_Model_T">Model T Ford mass production</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1910 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1910-1913: <a href="https://en.wikipedia.org/wiki/Principia_Mathematica">Whitehead and Russell's Principia Mathematica</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1912 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1912: <a href="https://en.wikipedia.org/wiki/Sinking_of_the_Titanic">Titanic sinks</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1913 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1913: <a href="https://en.wikipedia.org/wiki/Gnome_Monosoupape">Gnome Monosoupape rotary engine</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1914 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1914-1917: <a href="https://en.wikipedia.org/wiki/Imperial_Trans-Antarctic_Expedition">Shackleton's Endurance expedition to Antarctica</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1915 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1915: <a href="https://en.wikipedia.org/wiki/General_relativity">Einstein discovers general relativity</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1931 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1931: <a href="https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems">Godel's incompleteness theorems</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1936 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1936: <a href="https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis">Church-Turing thesis</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1939 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1939: <a href="https://en.wikipedia.org/wiki/Bombe">Turing's Bombe</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1937 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1937: <a href="https://en.wikipedia.org/wiki/Claude_Shannon">Shannon's application of Boolean algebra to electrical circuits</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1945 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1945: <a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">Von Neumann architecture</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1947 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1947: <a href="https://en.wikipedia.org/wiki/History_of_the_transistor">Bell Labs' transistor</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1949 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1949: <a href="https://en.wikipedia.org/wiki/Atomic_clock">First atomic clock</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1953 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1953: <a href="https://en.wikipedia.org/wiki/History_of_DNA">Watson and Crick discover DNA double helix</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1956 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1956: <a href="https://en.wikipedia.org/wiki/Regular_expression">Kleene's regular expression formalisation</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1957 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1957: <a href="https://en.wikipedia.org/wiki/Sputnik_1">Sputnik-1 launched</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1957 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1957: <a href="https://en.wikipedia.org/wiki/Wankel_engine">Wankel rotary engine</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1958 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1958: <a href="https://en.wikipedia.org/wiki/Carbon_fiber_reinforced_polymer">Carbon-fibre composites</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1964 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1964: <a href="https://en.wikipedia.org/wiki/IBM_System/360">IBM System/360</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1969 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1969: <a href="https://en.wikipedia.org/wiki/Apollo_11">Apollo 11, first man on moon</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1969 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1969: <a href="https://en.wikipedia.org/wiki/Unix">UNIX</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1971 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1971: <a href="https://en.wikipedia.org/wiki/Intel_4004">Intel 4004, first commercially-available microprocessor</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1977 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1977: <a href="https://en.wikipedia.org/wiki/Voyager_Golden_Record">Voyager spacecraft launch carrying Golden record</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1983 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1983: <a href="https://en.wikipedia.org/wiki/Internet_protocol_suite">TCP/IP</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1989 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1989: <a href="https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web">Tim Berners-Lee proposes world-wide web</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1991 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1991: <a href="https://en.wikipedia.org/wiki/Linux">Linux</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((1997 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    1997: <a href="https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov">Deep Blue beats Garry Kasparov at chess</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((2009 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    2009: <a href="https://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((2015 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    2015: <a href="https://en.wikipedia.org/wiki/Burgess_Clock_B">Burgess Clock B trials</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((2017 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    2017: <a href="https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol">AlphaGo beats Lee Sedol at Go</a>
+                </div>
+            </div>
+        
+            <div class="event" style="
+                left: calc(((2019 - -1750) / 3769) * 80%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    2019: <a href="https://en.wikipedia.org/wiki/GPT-2">GPT-2</a>
+                </div>
+            </div>
+        
+    </div>
+    <hr>
+    <p>Add discoveries and fix bugs on <a href="https://github.com/jes/timeline">github</a>.</p>
+    <p><a href="https://incoherency.co.uk">James Stanley</a></p>
+</body>
+</html> 
