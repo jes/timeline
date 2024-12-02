@@ -10,7 +10,7 @@
         
         .event {
             position: relative;
-            padding-left: 20px;
+            padding-left: 10px;
         }
         
         .event-dot {
@@ -21,12 +21,13 @@
             position: absolute;
             left: 0;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translate(-50%, -50%);
         }
         
         .event-text {
             display: inline-block;
             font-size: 14px;
+            transform: translateY(-2px);
         }
         
         .grid-line {
@@ -54,20 +55,22 @@
             text-decoration: underline;
         }
     </style>
+    <title>Timeline of Discovery</title>
 </head>
 <body>
+    <h1>Timeline of Discovery</h1>
     <div class="timeline">
-        {{$interval := 100}}
+        {{$interval := 200}}
         {{$startYear := floor (div $.EarliestYear $interval) | mul $interval}}
         {{range $year := sequence $startYear $.LatestYear $interval}}
-            <div class="grid-line" style="left: calc((({{$year}} - {{$.EarliestYear}}) / {{$.TotalYears}}) * 100%);">
+            <div class="grid-line" style="left: calc((({{$year}} - {{$.EarliestYear}}) / {{$.TotalYears}}) * 80%);">
                 <div class="grid-line-label">{{$year}}</div>
             </div>
         {{end}}
         
         {{range $index, $event := .Events}}
             <div class="event" style="
-                left: calc((({{$event.StartYear}} - {{$.EarliestYear}}) / {{$.TotalYears}}) * 100%);">
+                left: calc((({{$event.StartYear}} - {{$.EarliestYear}}) / {{$.TotalYears}}) * 80%);">
                 <div class="event-dot"></div>
                 <div class="event-text">
                     {{if .IsBC}}{{abs .StartYear}} BC{{else if .HasAD}}{{.StartYear}} AD{{else}}{{.StartYear}}{{end}}{{if ne .StartYear .EndYear}}-{{if .IsBC}}{{abs .EndYear}} BC{{else if .HasAD}}{{.EndYear}} AD{{else}}{{.EndYear}}{{end}}{{end}}: {{if .URL}}<a href="{{.URL}}">{{.Text}}</a>{{else}}{{.Text}}{{end}}
@@ -75,5 +78,8 @@
             </div>
         {{end}}
     </div>
+    <hr>
+    <p>Add discoveries and fix bugs on <a href="https://github.com/jes/timeline">github</a>.</p>
+    <p><a href="https://incoherency.co.uk">James Stanley</a></p>
 </body>
 </html> 

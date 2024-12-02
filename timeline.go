@@ -51,7 +51,7 @@ func parseTimeline(filename string) ([]Event, error) {
 
 	var events []Event
 	scanner := bufio.NewScanner(file)
-	re := regexp.MustCompile(`^(\d+(?:\s*[AB]C)?(?:-\d+(?:\s*[AB]C)?)?)\s*:\s*(.+?)(?:\s+(https?://\S+))?$`)
+	re := regexp.MustCompile(`^(\d+(?:\s*(?:BC|AD)?(?:-\d+(?:\s*(?:BC|AD)?)?)?)?)\s*:\s*(.+?)(?:\s+(https?://\S+))?$`)
 
 	for scanner.Scan() {
 		line := scanner.Text()
