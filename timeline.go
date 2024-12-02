@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"regexp"
 	"strings"
@@ -15,6 +16,7 @@ type Event struct {
 	Text      string
 	IsBC      bool
 	HasAD     bool
+	URL       string
 }
 
 type TemplateData struct {
@@ -49,7 +51,7 @@ func parseTimeline(filename string) ([]Event, error) {
 
 	var events []Event
 	scanner := bufio.NewScanner(file)
-	re := regexp.MustCompile(`^(\d+(?:\s*[AB]C)?(?:-\d+(?:\s*[AB]C)?)?)\s*:\s*(.+)$`)
+	re := regexp.MustCompile(`^(\d+(?:\s*[AB]C)?(?:-\d+(?:\s*[AB]C)?)?)\s*:\s*(.+?)(?:\s+(https?://\S+))?$`)
 
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -63,6 +65,10 @@ func parseTimeline(filename string) ([]Event, error) {
 
 		var event Event
 		event.Text = text
+
+		if len(matches) > 3 && matches[3] != "" {
+			event.URL = matches[3]
+		}
 
 		// Handle date ranges
 		if strings.Contains(dateStr, "-") {
@@ -126,7 +132,20 @@ func main() {
 			}
 			return a
 		},
-		"multiply": func(a, b int) int { return a * b },
+		"mul": func(a, b int) int { return a * b },
+		"div": func(a, b int) int {
+			return a / b
+		},
+		"floor": func(a int) int {
+			return int(math.Floor(float64(a)))
+		},
+		"sequence": func(start, end, step int) []int {
+			seq := []int{}
+			for i := start; i <= end; i += step {
+				seq = append(seq, i)
+			}
+			return seq
+		},
 	}
 
 	tmpl, err := template.New("timeline").Funcs(funcMap).ParseFiles("timeline.html.tmpl")

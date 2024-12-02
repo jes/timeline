@@ -5,6 +5,7 @@
         .timeline {
             position: relative;
             margin: 50px;
+            min-height: 100vh;
         }
         
         .event {
@@ -27,19 +28,52 @@
             display: inline-block;
             font-size: 14px;
         }
+        
+        .grid-line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: #ddd;
+            top: 0;
+            bottom: 0;
+        }
+        
+        .grid-line-label {
+            position: absolute;
+            top: -20px;
+            transform: translateX(-50%);
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .event-text a {
+            color: darkblue;
+            text-decoration: none;
+        }
+        .event-text a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="timeline">
-    {{range $index, $event := .Events}}
-        <div class="event" style="
-            left: calc((({{$event.StartYear}} - {{$.EarliestYear}}) / {{$.TotalYears}}) * 100%);">
-            <div class="event-dot"></div>
-            <div class="event-text">
-                {{if .IsBC}}{{abs .StartYear}} BC{{else if .HasAD}}{{.StartYear}} AD{{else}}{{.StartYear}}{{end}}{{if ne .StartYear .EndYear}}-{{if .IsBC}}{{abs .EndYear}} BC{{else if .HasAD}}{{.EndYear}} AD{{else}}{{.EndYear}}{{end}}{{end}}: {{.Text}}
+        {{$interval := 100}}
+        {{$startYear := floor (div $.EarliestYear $interval) | mul $interval}}
+        {{range $year := sequence $startYear $.LatestYear $interval}}
+            <div class="grid-line" style="left: calc((({{$year}} - {{$.EarliestYear}}) / {{$.TotalYears}}) * 100%);">
+                <div class="grid-line-label">{{$year}}</div>
             </div>
-        </div>
-    {{end}}
+        {{end}}
+        
+        {{range $index, $event := .Events}}
+            <div class="event" style="
+                left: calc((({{$event.StartYear}} - {{$.EarliestYear}}) / {{$.TotalYears}}) * 100%);">
+                <div class="event-dot"></div>
+                <div class="event-text">
+                    {{if .IsBC}}{{abs .StartYear}} BC{{else if .HasAD}}{{.StartYear}} AD{{else}}{{.StartYear}}{{end}}{{if ne .StartYear .EndYear}}-{{if .IsBC}}{{abs .EndYear}} BC{{else if .HasAD}}{{.EndYear}} AD{{else}}{{.EndYear}}{{end}}{{end}}: {{if .URL}}<a href="{{.URL}}">{{.Text}}</a>{{else}}{{.Text}}{{end}}
+                </div>
+            </div>
+        {{end}}
     </div>
 </body>
 </html> 
