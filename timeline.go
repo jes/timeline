@@ -20,6 +20,8 @@ type Event struct {
 type TemplateData struct {
 	Events       []Event
 	EarliestYear int
+	LatestYear   int
+	TotalYears   int
 }
 
 func parseYear(year string) (int, bool, bool) {
@@ -106,9 +108,14 @@ func main() {
 	}
 
 	earliestYear := findEarliestYear(events)
+	latestYear := events[len(events)-1].EndYear
+	totalYears := latestYear - earliestYear
+
 	data := TemplateData{
 		Events:       events,
 		EarliestYear: earliestYear,
+		LatestYear:   latestYear,
+		TotalYears:   totalYears,
 	}
 
 	funcMap := template.FuncMap{
@@ -119,6 +126,7 @@ func main() {
 			}
 			return a
 		},
+		"multiply": func(a, b int) int { return a * b },
 	}
 
 	tmpl, err := template.New("timeline").Funcs(funcMap).ParseFiles("timeline.html.tmpl")
